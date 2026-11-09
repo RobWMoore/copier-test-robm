@@ -1,0 +1,3 @@
+# Boilerplate Docker Compose project for copier-test-robm.
+# Add one or more services before running this project or creating a release bundle.
+services: {}

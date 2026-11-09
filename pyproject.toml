@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------------------
+# Project and tooling metadata
+# ---------------------------------------------------------------------------
+[project]
+name = "copier-test-robm"
+version = "0.0.0"
+readme = "README.md"
+requires-python = "==3.14.0"
+
+# ---------------------------------------------------------------------------
+# UV configuration
+# ---------------------------------------------------------------------------
+[tool.uv]
+exclude-newer = "7 days"
+
+[tool.uv.workspace]                                                     
+members = [
+    ".repo_tooling",
+    "checks",
+]
+
+# ---------------------------------------------------------------------------
+# Ruff configuration
+# ---------------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+show-fixes = true
+
+[tool.ruff.lint]
+select = [
+  "E",  # pycodestyle errors
+  "F",  # Pyflakes
+  "I",  # import sorting
+  "B",  # flake8-bugbear
+  "UP", # pyupgrade
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+# ---------------------------------------------------------------------------
+# MyPy configuration
+# ---------------------------------------------------------------------------
+[tool.mypy]
+pretty = true
+ignore_missing_imports = true
+warn_redundant_casts = true
+show_error_codes = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+install_types = false
+no_implicit_optional = true
+plugins = ["pydantic.mypy"]
+
+
+# ---------------------------------------------------------------------------
+# Coverage configuration
+# ---------------------------------------------------------------------------
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+skip_covered = true
+exclude_lines = ["pragma: no cover", "if TYPE_CHECKING:", "@overload"]
+
+[tool.coverage.run]
+include = ["./*"]
+concurrency = ["thread"]

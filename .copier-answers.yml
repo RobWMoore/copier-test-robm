@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier
+_commit: v0.1.0-25-g8f0dab1
+_src_path: git@gitlab.com:coldquanta/uk/software/prototypes/copier-templates/copier-software-repo-template.git
+development_approach: application_and_library_development
+docker_enabled: true
+enabled_programming_languages:
+- python
+- rust
+gitlab_ci_enabled: false
+project_name: copier-test-robm
+python_version: 3.14.0
+rust_msrv: 1.85.0
